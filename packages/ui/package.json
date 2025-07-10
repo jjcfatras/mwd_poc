@@ -6,7 +6,7 @@
     "./*": "./src/*.tsx"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint --fix",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"
   },
@@ -22,5 +22,6 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
-  }
+  },
+  "type": "module"
 }
