@@ -29,6 +29,30 @@ export const config = [
     },
   },
   {
+    rules: {
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          type: "natural",
+          order: "asc",
+          groups: [
+            "side-effect",
+            ["type-builtin", "value-builtin"],
+            ["type-external", "value-external"],
+            ["type-internal", "value-internal"],
+            ["type-parent", "value-parent"],
+            ["type-sibling", "value-sibling"],
+            ["type-index", "value-index"],
+            "object",
+            "unknown",
+          ],
+          newlinesBetween: 1,
+          internalPattern: ["^@repo/.+"],
+        },
+      ],
+    },
+  },
+  {
     ignores: ["dist/**"],
   },
 ];
