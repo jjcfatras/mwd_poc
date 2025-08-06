@@ -12,15 +12,14 @@
     "ui-typegen": "@chakra-ui/cli typegen ../../packages/ui/src/theming/nf.ts"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.22.0",
-    "@emotion/react": "^11.14.0",
     "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/postcss": "^4.1.11",
     "next": "15.4.1",
     "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "autoprefixer": "^10.4.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

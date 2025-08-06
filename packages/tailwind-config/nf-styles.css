@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @import "./shared-styles.css";
+
+@theme inline {
+  --color-primary: var(--color-tangerine-400);
+  --color-primary-interact: var(--color-tangerine-600);
+  --color-onPrimary: var(--color-navy-700);
+  --color-onPrimary-interact: var(--color-cream-50);
+}
