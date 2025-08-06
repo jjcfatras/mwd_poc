@@ -1,10 +1,9 @@
-import { Center, Button as ChakraButton, Text } from "@chakra-ui/react";
+import { TWButton } from "@repo/ui/components/TWButton";
 
 export default function Home() {
   return (
-    <Center gap={"4"} p={"1"}>
-      <ChakraButton>Click Me</ChakraButton>
-      <Text fontSize={"2xl"}>Hello World</Text>
-    </Center>
+    <div className="flex h-screen items-center justify-center">
+      <TWButton>Click Me</TWButton>
+    </div>
   );
 }

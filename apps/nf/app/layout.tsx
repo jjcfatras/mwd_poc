@@ -1,10 +1,7 @@
 import "./globals.css";
 
-import { ChakraProvider } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
-import nfSystem from "@repo/ui/theming/nf";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -30,11 +27,8 @@ export default function RootLayout({
     <html
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       lang="en"
-      suppressHydrationWarning
     >
-      <body>
-        <ChakraProvider value={nfSystem}>{children}</ChakraProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

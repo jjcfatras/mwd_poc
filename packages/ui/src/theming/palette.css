@@ -1,11 +1,4 @@
-@import "tailwindcss";
-
-@theme {
-  --color-*: initial;
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
+:root {
   --color-black: #101010;
   --color-charcoal-50: #FAF8FS;
   --color-charcoal-100: #f0ece8;
