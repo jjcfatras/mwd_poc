@@ -6,4 +6,11 @@
   --color-primary-interact: var(--color-tangerine-600);
   --color-onPrimary: var(--color-navy-700);
   --color-onPrimary-interact: var(--color-cream-50);
+  --color-surface: var(--color-cream-50);
+  --color-onSurface: var(--color-navy-700);
+  --color-surfaceVariant: var(--color-cream-100);
+  --color-onSurfaceVariant: var(--color-navy-700);
+  --color-secondary: var(--color-navy-700);
+  --color-onSecondary: var(--color-cream-50);
+  --color-background: var(--color-cream-50);
 }
