@@ -1,12 +1,13 @@
+import { Accordion } from "@ark-ui/react/accordion";
 import { Collapsible } from "@ark-ui/react/collapsible";
 import Image from "next/image";
 import type { HTMLAttributes } from "react";
 
 import image from "@repo/assets/images/nf-logo-vertical.webp";
-import { Button } from "@repo/ui/components/Button";
 
 import { cn } from "../utils";
 
+import { Button } from "./Button";
 import { Container } from "./Container";
 
 type MenuItem = {
@@ -91,7 +92,7 @@ const MENU_ITEMS: MenuItem[] = [
   },
 ] as const;
 
-type HeaderMenuProps = HTMLAttributes<HTMLElement> & {
+type HeaderMenuProps = HTMLAttributes<HTMLDivElement> & {
   menuItems: MenuItem[];
 };
 
@@ -103,7 +104,7 @@ const HeaderMenu = ({ className, menuItems, ...rest }: HeaderMenuProps) => (
     )}
     {...rest}
   >
-    {menuItems?.map((item) => (
+    {menuItems.map((item) => (
       <div
         className="group relative grid grid-cols-1 p-4 text-center hover:bg-surfaceDark"
         key={item.label}
@@ -134,6 +135,73 @@ const HeaderMenu = ({ className, menuItems, ...rest }: HeaderMenuProps) => (
   </nav>
 );
 
+type DropdownMenuProps = HTMLAttributes<HTMLDivElement> & {
+  menuItems: MenuItem[];
+};
+
+const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
+  <Collapsible.Root {...rest}>
+    <Collapsible.Trigger>
+      <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 items-center justify-center">
+        <span className="h-1 w-full bg-primary" />
+        <span className="h-1 w-full bg-primary" />
+        <span className="h-1 w-full bg-primary" />
+      </div>
+    </Collapsible.Trigger>
+    <Collapsible.Content className="absolute top-full right-0 left-0 border-b-1 border-primary bg-surface">
+      <div className="flex grow flex-col place-items-center p-0">
+        <Accordion.Root
+          className="flex w-full flex-col divide-y border-b-1 border-outline"
+          collapsible
+        >
+          {menuItems.map((item) => (
+            <Accordion.Item
+              className="w-full border-outline"
+              key={item.label}
+              value={item.label}
+            >
+              <Accordion.ItemTrigger className="w-full p-4 text-left hover:bg-surfaceDark">
+                <a
+                  className="text-lg font-semibold text-onSurfaceDark"
+                  href={item.path}
+                >
+                  {item.label}
+                </a>
+              </Accordion.ItemTrigger>
+              <Accordion.ItemContent className="w-full">
+                <div className="flex flex-col">
+                  {item.subItems?.map((subItem) => (
+                    <a
+                      className="block px-4 py-2 text-base/4 text-onSurface hover:underline"
+                      href={subItem.path}
+                      key={subItem.label}
+                    >
+                      {subItem.label}
+                    </a>
+                  ))}
+                </div>
+              </Accordion.ItemContent>
+            </Accordion.Item>
+          ))}
+        </Accordion.Root>
+        <div className="w-full p-4">
+          <Button size="md-full">Apply Now</Button>
+        </div>
+      </div>
+    </Collapsible.Content>
+  </Collapsible.Root>
+);
+
+const NFLogo = () => (
+  <Image
+    alt="National Funding"
+    className="my-auto py-1"
+    height={52}
+    src={image}
+    width={174}
+  />
+);
+
 export const Header = () => (
   <header className="m-0 flex w-full flex-col py-0">
     <div className="flex w-full flex-row items-center bg-secondary">
@@ -157,39 +225,14 @@ export const Header = () => (
     <div className="relative flex w-full items-center border-b-1 border-primary bg-surface">
       {/* desktop */}
       <Container className="hidden lg:flex">
-        <Image
-          alt="National Funding"
-          className="my-auto py-1"
-          height={52}
-          src={image}
-          width={174}
-        />
+        <NFLogo />
         <HeaderMenu className="ml-auto" menuItems={MENU_ITEMS} />
         <Button className="my-auto">Apply Now</Button>
       </Container>
       {/* mobile */}
       <Container className="justify-between lg:hidden">
-        <Image
-          alt="National Funding"
-          className="my-auto py-1"
-          height={52}
-          src={image}
-          width={174}
-        />
-        <Collapsible.Root>
-          <Collapsible.Trigger>
-            <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 items-center justify-center">
-              <span className="h-1 w-full bg-primary" />
-              <span className="h-1 w-full bg-primary" />
-              <span className="h-1 w-full bg-primary" />
-            </div>
-          </Collapsible.Trigger>
-          <Collapsible.Content className="absolute top-full right-0 left-0 border-2 border-primary bg-surface">
-            <div className="flex grow flex-col place-items-center p-4">
-              Content
-            </div>
-          </Collapsible.Content>
-        </Collapsible.Root>
+        <NFLogo />
+        <DropdownMenu menuItems={MENU_ITEMS} />
       </Container>
     </div>
   </header>

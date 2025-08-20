@@ -4,7 +4,7 @@ import type { ButtonHTMLAttributes } from "react";
 import { cn } from "../utils";
 
 const button = cva(
-  "isolate inline-flex flex-shrink-0 cursor-pointer appearance-none items-center justify-center rounded-md border font-normal capitalize transition duration-200",
+  "isolate inline-flex cursor-pointer appearance-none items-center justify-center rounded-md border font-normal capitalize transition duration-200",
   {
     defaultVariants: {
       size: "md",
