@@ -1,0 +1,17 @@
+{
+  "name": "@repo/types",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./index": "./src/index.d.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "5.8.2"
+  },
+  "dependencies": {},
+  "type": "module"
+}

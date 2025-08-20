@@ -32,6 +32,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "verbatimModuleSyntax": true,
+    "exactOptionalPropertyTypes": true,
+    "strictNullChecks": true,
     "noEmit": true,
     "paths": {
       "@/*": ["./src/*"]
