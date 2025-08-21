@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./index": "./src/index.d.ts"
+    ".": "./src/index.d.ts"
   },
   "scripts": {
     "check-types": "tsc --noEmit"
