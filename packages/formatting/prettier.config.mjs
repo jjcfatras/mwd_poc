@@ -2,7 +2,5 @@
 export const config = {
   trailingComma: "all",
   semi: true,
-  plugins: ["prettier-plugin-tailwindcss"],
-  tailwindStylesheet: "@repo/tailwind-config/nf-styles",
-  tailwindFunctions: ["clsx", "cva"],
+  printWidth: 80,
 };

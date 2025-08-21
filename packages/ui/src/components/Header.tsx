@@ -140,7 +140,7 @@ type DropdownMenuProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
-  <Collapsible.Root {...rest}>
+  <Collapsible.Root lazyMount unmountOnExit {...rest}>
     <Collapsible.Trigger>
       <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 items-center justify-center">
         <span className="h-1 w-full bg-primary" />

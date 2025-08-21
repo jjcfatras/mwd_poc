@@ -91,6 +91,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.3.1
+      '@repo/assets':
+        specifier: workspace:*
+        version: link:../../packages/assets
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
