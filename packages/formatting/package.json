@@ -9,7 +9,7 @@
     "@repo/tailwind-config": "workspace:*"
   },
   "exports": {
-    "./prettier-config": "./prettier.config.mjs",
-    "./prettier-tw": "./prettier-tw.config.mjs"
+    "./prettier-config": "./src/prettier.config.mjs",
+    "./prettier-tw": "./src/prettier-tw.config.mjs"
   }
 }

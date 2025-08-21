@@ -4,9 +4,9 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./shared-styles": "./shared-styles.css",
-    "./nf-styles": "./nf-styles.css",
-    "./postcss": "./postcss.config.js"
+    "./shared-styles": "./src/shared-styles.css",
+    "./nf-styles": "./src/nf-styles.css",
+    "./postcss": "./src/postcss.config.js"
   },
   "dependencies": {
     "postcss": "^8.5.6",
