@@ -24,10 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className={`${robotoFlex.variable} ${robotoMono.variable} antialiased`}
+      className={`${robotoFlex.variable} ${robotoMono.variable} size-full antialiased`}
       lang="en"
     >
-      <body>{children}</body>
+      <body className="size-full bg-background">{children}</body>
     </html>
   );
 }

@@ -6,10 +6,13 @@
     ".": "./src/index.d.ts"
   },
   "scripts": {
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "lint": "eslint --fix"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "eslint": "^9.30.0",
     "typescript": "5.8.2"
   },
   "dependencies": {},

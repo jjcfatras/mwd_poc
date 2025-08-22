@@ -148,7 +148,7 @@ const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
         <span className="h-1 w-full bg-primary" />
       </div>
     </Collapsible.Trigger>
-    <Collapsible.Content className="absolute top-full right-0 left-0 border-b-1 border-primary bg-surface">
+    <Collapsible.Content className="absolute top-full right-0 left-0 z-100 border-b-2 border-primary bg-surface">
       <div className="flex grow flex-col place-items-center p-0">
         <Accordion.Root
           className="flex w-full flex-col divide-y border-b-1 border-outline"
@@ -222,7 +222,7 @@ export const Header = () => (
         </div>
       </Container>
     </div>
-    <div className="relative flex w-full items-center border-b-1 border-primary bg-surface">
+    <div className="relative flex w-full items-center border-b-2 border-primary bg-surface">
       {/* desktop */}
       <Container className="hidden lg:flex">
         <NFLogo />
