@@ -2,6 +2,7 @@ import { Accordion } from "@ark-ui/react/accordion";
 import { Collapsible } from "@ark-ui/react/collapsible";
 import Image from "next/image";
 import type { HTMLAttributes } from "react";
+import { ChevronDown } from "react-feather";
 
 import image from "@repo/assets/images/nf-logo-vertical.webp";
 
@@ -106,10 +107,10 @@ const HeaderMenu = ({ className, menuItems, ...rest }: HeaderMenuProps) => (
   >
     {menuItems.map((item) => (
       <div
-        className="group relative grid grid-cols-1 p-4 text-center hover:bg-surfaceDark"
+        className="group relative grid grid-cols-1 p-4 hover:bg-surfaceDark"
         key={item.label}
       >
-        <div className="grid grid-cols-1 text-center">
+        <div className="grid grid-cols-1 place-items-center">
           <a
             className="text-lg font-semibold text-onSurfaceDark"
             href={item.path}
@@ -141,14 +142,14 @@ type DropdownMenuProps = HTMLAttributes<HTMLDivElement> & {
 
 const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
   <Collapsible.Root lazyMount unmountOnExit {...rest}>
-    <Collapsible.Trigger>
-      <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 items-center justify-center">
+    <Collapsible.Trigger asChild>
+      <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 place-items-center">
         <span className="h-1 w-full bg-primary" />
         <span className="h-1 w-full bg-primary" />
         <span className="h-1 w-full bg-primary" />
       </div>
     </Collapsible.Trigger>
-    <Collapsible.Content className="absolute top-full right-0 left-0 z-100 border-b-2 border-primary bg-surface">
+    <Collapsible.Content className="absolute top-full right-0 left-0 z-100 border-b-4 border-primary bg-surface">
       <div className="flex grow flex-col place-items-center p-0">
         <Accordion.Root
           className="flex w-full flex-col divide-y border-b-1 border-outline"
@@ -160,13 +161,16 @@ const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
               key={item.label}
               value={item.label}
             >
-              <Accordion.ItemTrigger className="w-full p-4 text-left hover:bg-surfaceDark">
+              <Accordion.ItemTrigger className="flex w-full flex-row justify-between p-4 text-left align-middle hover:bg-surfaceDark">
                 <a
                   className="text-lg font-semibold text-onSurfaceDark"
                   href={item.path}
                 >
                   {item.label}
                 </a>
+                <Accordion.ItemIndicator asChild>
+                  <ChevronDown className="my-auto data-[state=open]:rotate-180" />
+                </Accordion.ItemIndicator>
               </Accordion.ItemTrigger>
               <Accordion.ItemContent className="w-full">
                 <div className="flex flex-col">
@@ -195,7 +199,7 @@ const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
 const NFLogo = () => (
   <Image
     alt="National Funding"
-    className="my-auto py-1"
+    className="my-auto"
     height={52}
     src={image}
     width={174}
@@ -222,17 +226,17 @@ export const Header = () => (
         </div>
       </Container>
     </div>
-    <div className="relative flex w-full items-center border-b-2 border-primary bg-surface">
+    <div className="relative flex min-h-20 w-full items-center border-b-4 border-primary bg-surface">
       {/* desktop */}
-      <Container className="hidden lg:flex">
+      <Container className="hidden h-full lg:flex">
         <NFLogo />
         <HeaderMenu className="ml-auto" menuItems={MENU_ITEMS} />
-        <Button className="my-auto">Apply Now</Button>
+        <Button className="my-auto ml-1">Apply Now</Button>
       </Container>
       {/* mobile */}
-      <Container className="justify-between lg:hidden">
+      <Container className="h-full justify-between lg:hidden">
         <NFLogo />
-        <DropdownMenu menuItems={MENU_ITEMS} />
+        <DropdownMenu className="my-auto" menuItems={MENU_ITEMS} />
       </Container>
     </div>
   </header>

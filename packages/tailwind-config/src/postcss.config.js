@@ -1,6 +1,8 @@
 export const config = {
   plugins: {
-    "@tailwindcss/postcss": {},
+    "@tailwindcss/postcss": {
+      base: process.cwd(),
+    },
     autoprefixer: {},
   },
 };
