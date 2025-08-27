@@ -4,8 +4,8 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./images*": "./src/images/*",
-    "./fonts*": "./src/fonts/*"
+    "./images/*": "./src/images/*",
+    "./fonts/*": "./src/fonts/*"
   },
   "dependencies": {}
 }

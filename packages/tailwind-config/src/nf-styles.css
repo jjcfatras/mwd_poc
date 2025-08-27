@@ -14,4 +14,6 @@
   --color-background: var(--color-cream-50);
   --color-outline: #e2e5e9;
   --color-onImage: var(--color-cream-50);
+  --color-surfaceDarker: #ababab;
+  --color-onSurfaceDarker: var(--color-navy-700);
 }

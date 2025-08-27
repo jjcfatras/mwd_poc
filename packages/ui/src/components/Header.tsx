@@ -119,7 +119,7 @@ const HeaderMenu = ({ className, menuItems, ...rest }: HeaderMenuProps) => (
           </a>
         </div>
         {!!item.subItems?.length && (
-          <div className="absolute top-full right-0 left-0 hidden w-max min-w-full divide-y rounded-t-none rounded-b-sm border-0 border-t-2 border-t-primary bg-surface text-left shadow-md group-hover:block">
+          <div className="absolute top-full right-0 left-0 hidden w-max min-w-full divide-y rounded-t-none rounded-b-sm border-0 border-t-4 border-t-primary bg-surface text-left shadow-md group-hover:block">
             {item.subItems.map((subItem) => (
               <a
                 className="block border-outline px-4 py-3 text-base/4 text-onSurface hover:underline"
@@ -199,7 +199,7 @@ const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
 const NFLogo = () => (
   <Image
     alt="National Funding"
-    className="my-auto"
+    className="py-1"
     height={52}
     src={image}
     width={174}
@@ -226,17 +226,17 @@ export const Header = () => (
         </div>
       </Container>
     </div>
-    <div className="relative flex min-h-20 w-full items-center border-b-4 border-primary bg-surface">
+    <div className="relative flex w-full items-center border-b-4 border-primary bg-surface">
       {/* desktop */}
-      <Container className="hidden h-full lg:flex">
+      <Container className="hidden h-full items-center lg:flex">
         <NFLogo />
         <HeaderMenu className="ml-auto" menuItems={MENU_ITEMS} />
-        <Button className="my-auto ml-1">Apply Now</Button>
+        <Button className="ml-1">Apply Now</Button>
       </Container>
       {/* mobile */}
-      <Container className="h-full justify-between lg:hidden">
+      <Container className="h-full items-center justify-between lg:hidden">
         <NFLogo />
-        <DropdownMenu className="my-auto" menuItems={MENU_ITEMS} />
+        <DropdownMenu menuItems={MENU_ITEMS} />
       </Container>
     </div>
   </header>

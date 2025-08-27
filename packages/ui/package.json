@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./components*": "./src/components/*.tsx",
-    "./theming*": "./src/theming/*.ts",
+    "./components/*": "./src/components/*.tsx",
+    "./theming/*": "./src/theming/*.ts",
     "./utils": "./src/utils/index.ts",
     "./styles": "./dist/styles.css"
   },
@@ -13,6 +13,7 @@
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit",
     "dev:styles": "tailwindcss -i ./globals.css -o ./dist/styles.css --watch",
+    "dev:components": "tsc --watch",
     "build:styles": "tailwindcss -i ./globals.css -o ./dist/styles.css"
   },
   "devDependencies": {

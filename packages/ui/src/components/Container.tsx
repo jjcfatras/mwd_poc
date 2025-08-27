@@ -7,7 +7,7 @@ export type ContainerProps = HTMLAttributes<HTMLDivElement>;
 export const Container = ({ children, className, ...rest }: ContainerProps) => (
   <div
     className={cn(
-      "mx-auto flex w-full max-w-screen-sm flex-row p-0",
+      "mx-auto flex w-full max-w-screen-sm flex-row px-4",
       "md:max-w-screen-md",
       "lg:max-w-screen-lg",
       "xl:max-w-screen-xl",

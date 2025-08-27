@@ -2,8 +2,8 @@
   "name": "mwd_poc",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --force",
+    "build": "turbo run build --concurrency=100%",
+    "dev": "turbo run dev --concurrency=100%",
     "lint": "turbo run lint",
     "format": "prettier . --write",
     "check-types": "turbo run check-types"

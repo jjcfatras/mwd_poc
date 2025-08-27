@@ -63,6 +63,9 @@ importers:
 
   apps/nf:
     dependencies:
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@tailwindcss/cli':
         specifier: ^4.1.11
         version: 4.1.11
@@ -103,9 +106,6 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       '@types/node':
         specifier: ^24
         version: 24.1.0

@@ -3,13 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "tw-dev": "tailwindcss -i ./app/globals.css -o ./dist/styles.css --watch",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "check-types": "tsc --noEmit",
-    "ui-typegen": "@chakra-ui/cli typegen ../../packages/ui/src/theming/nf.ts"
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
@@ -19,7 +17,8 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "tailwindcss": "^4.1.11",
-    "autoprefixer": "^10.4.14"
+    "autoprefixer": "^10.4.14",
+    "@repo/ui": "workspace:*"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -27,7 +26,6 @@
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/assets": "workspace:*",
-    "@repo/ui": "workspace:*",
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
