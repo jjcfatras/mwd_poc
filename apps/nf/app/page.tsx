@@ -18,25 +18,10 @@ const Home = () => (
       <Hero
         imageHandleDesktop="ltAPjSgBShiw0wdOFOvs"
         imageHandleMobile="5Y6eYRHpQCuVnPtYLtN2"
-      >
-        <div className="grid grid-cols-2">
-          <div className="grid place-content-around">
-            <h1 className="text-5xl font-medium text-onImage lg:text-6xl">
-              Funding For Your Business When You Need It Most
-            </h1>
-            <div className="grid gap-y-4">
-              <p className="text-3xl text-onImage">
-                Get Started &gt; Get Approved &gt; Get Funding
-              </p>
-              <Button size="lg">Apply Now</Button>
-            </div>
-          </div>
-          <div className="grid"></div>
-        </div>
-      </Hero>
+      />
       <div className="w-full bg-surfaceDarker">
         <Container>
-          <div className="grid w-full grid-cols-2 justify-items-center gap-0 md:grid-cols-4">
+          <div className="grid w-full justify-items-center gap-0 sm:grid-cols-2 lg:grid-cols-4">
             {Array.from([trustpilotIcon, bbbIcon, inc5000Icon, adobeIcon]).map(
               (icon, index) => (
                 <Image alt="" key={index} src={icon} />
@@ -45,8 +30,8 @@ const Home = () => (
           </div>
         </Container>
       </div>
-      <div className="w-full bg-secondary pt-16">
-        <Container className="flex-col justify-center gap-4 text-center">
+      <div className="w-full bg-secondary py-16">
+        <Container className="flex-col justify-center gap-8 text-center">
           <h2 className="text-4xl font-medium text-onSecondary">
             Small Business Lending Solutions Tailored to Your Specific Needs
           </h2>
@@ -63,8 +48,8 @@ const Home = () => (
             </a>
             , including small business loans and equipment financing.
           </p>
-          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-            <div className="grid justify-items-center gap-4 bg-surface p-9">
+          <div className="grid justify-items-center gap-4 md:grid-cols-2">
+            <div className="grid w-4/5 justify-items-center gap-4 bg-surface p-9">
               <Image alt="" src={sblIcon} />
               <h2 className="text-4xl font-medium text-onSurface">
                 Small Business Loans
@@ -73,14 +58,14 @@ const Home = () => (
                 Secure working capital for inventory, payroll, marketing, taxes
                 and more.
               </p>
-              <h3 className="text-lg font-medium text-onSurface">
+              <h3 className="text-lg font-semibold text-onSurface">
                 $5,000 to $500,000
               </h3>
               <Button className="self-end" size={"md-full"}>
                 Learn More
               </Button>
             </div>
-            <div className="grid justify-items-center gap-4 bg-surface p-9">
+            <div className="grid w-4/5 justify-items-center gap-4 bg-surface p-9">
               <Image alt="" src={efIcon} />
               <h2 className="text-4xl font-medium text-onSurface">
                 Equipment Financing and Leasing
@@ -89,7 +74,7 @@ const Home = () => (
                 Business lending options to purchase or lease new or used
                 equipment.
               </p>
-              <h3 className="text-lg font-medium text-onSurface">
+              <h3 className="text-lg font-semibold text-onSurface">
                 Up to $150,000
               </h3>
               <Button className="self-end" size={"md-full"}>

@@ -136,6 +136,14 @@ const HeaderMenu = ({ className, menuItems, ...rest }: HeaderMenuProps) => (
   </nav>
 );
 
+const Hamburger = () => (
+  <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 place-items-center">
+    <span className="h-1 w-full bg-primary" />
+    <span className="h-1 w-full bg-primary" />
+    <span className="h-1 w-full bg-primary" />
+  </div>
+);
+
 type DropdownMenuProps = HTMLAttributes<HTMLDivElement> & {
   menuItems: MenuItem[];
 };
@@ -143,11 +151,7 @@ type DropdownMenuProps = HTMLAttributes<HTMLDivElement> & {
 const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
   <Collapsible.Root lazyMount unmountOnExit {...rest}>
     <Collapsible.Trigger asChild>
-      <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 place-items-center">
-        <span className="h-1 w-full bg-primary" />
-        <span className="h-1 w-full bg-primary" />
-        <span className="h-1 w-full bg-primary" />
-      </div>
+      <Hamburger />
     </Collapsible.Trigger>
     <Collapsible.Content className="absolute top-full right-0 left-0 z-100 border-b-4 border-primary bg-surface">
       <div className="flex grow flex-col place-items-center p-0">
@@ -161,15 +165,17 @@ const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
               key={item.label}
               value={item.label}
             >
-              <Accordion.ItemTrigger className="flex w-full flex-row justify-between p-4 text-left align-middle hover:bg-surfaceDark">
+              <Accordion.ItemTrigger className="flex w-full flex-row justify-between bg-surface p-4 text-left align-middle hover:bg-surfaceDark">
                 <a
-                  className="text-lg font-semibold text-onSurfaceDark"
+                  className="text-lg font-semibold text-onSurface hover:bg-onSurfaceDark"
                   href={item.path}
                 >
                   {item.label}
                 </a>
                 <Accordion.ItemIndicator asChild>
-                  <ChevronDown className="my-auto data-[state=open]:rotate-180" />
+                  {(item.subItems?.length || 0) >= 1 && (
+                    <ChevronDown className="my-auto data-[state=open]:rotate-180" />
+                  )}
                 </Accordion.ItemIndicator>
               </Accordion.ItemTrigger>
               <Accordion.ItemContent className="w-full">
