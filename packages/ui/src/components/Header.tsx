@@ -1,7 +1,7 @@
 import { Accordion } from "@ark-ui/react/accordion";
 import { Collapsible } from "@ark-ui/react/collapsible";
 import Image from "next/image";
-import type { HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 import { ChevronDown } from "react-feather";
 
 import image from "@repo/assets/images/nf-logo-vertical.webp";
@@ -150,7 +150,7 @@ type DropdownMenuProps = HTMLAttributes<HTMLDivElement> & {
 
 const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
   <Collapsible.Root lazyMount unmountOnExit {...rest}>
-    <Collapsible.Trigger asChild>
+    <Collapsible.Trigger className="grid place-content-center">
       <Hamburger />
     </Collapsible.Trigger>
     <Collapsible.Content className="absolute top-full right-0 left-0 z-100 border-b-4 border-primary bg-surface">
@@ -212,38 +212,48 @@ const NFLogo = () => (
   />
 );
 
-export const Header = () => (
-  <header className="m-0 flex w-full flex-col py-0">
-    <div className="flex w-full flex-row items-center bg-secondary">
-      <Container>
-        <div className="ml-auto grid auto-cols-auto grid-flow-col divide-x">
-          <a
-            className="border-outline px-4 py-2 text-primary"
-            href="tel:8887332383"
-          >
-            888.733.2383
-          </a>
-          <a
-            className="border-outline px-4 py-2 text-base text-onSecondary"
-            href="/contact-us"
-          >
-            Contact Us
-          </a>
-        </div>
-      </Container>
-    </div>
-    <div className="relative flex w-full items-center border-b-4 border-primary bg-surface">
-      {/* desktop */}
-      <Container className="hidden h-full items-center lg:flex">
-        <NFLogo />
-        <HeaderMenu className="ml-auto" menuItems={MENU_ITEMS} />
-        <Button className="ml-1">Apply Now</Button>
-      </Container>
-      {/* mobile */}
-      <Container className="h-full items-center justify-between lg:hidden">
-        <NFLogo />
-        <DropdownMenu menuItems={MENU_ITEMS} />
-      </Container>
-    </div>
-  </header>
+type HeaderProps = HTMLAttributes<HTMLElement>;
+
+export const Header = forwardRef<HTMLElement, HeaderProps>(
+  ({ className, ...rest }: HeaderProps, ref) => (
+    <header
+      className={cn(`m-0 flex w-full flex-col py-0`, className)}
+      ref={ref}
+      {...rest}
+    >
+      <div className="flex w-full flex-row items-center bg-secondary">
+        <Container>
+          <div className="ml-auto grid auto-cols-auto grid-flow-col divide-x">
+            <a
+              className="border-outline px-4 py-2 text-primary"
+              href="tel:8887332383"
+            >
+              888.733.2383
+            </a>
+            <a
+              className="border-outline px-4 py-2 text-base text-onSecondary"
+              href="/contact-us"
+            >
+              Contact Us
+            </a>
+          </div>
+        </Container>
+      </div>
+      <div className="relative flex w-full items-center border-b-4 border-primary bg-surface">
+        {/* desktop */}
+        <Container className="hidden h-full items-center lg:flex">
+          <NFLogo />
+          <HeaderMenu className="ml-auto" menuItems={MENU_ITEMS} />
+          <Button className="ml-1">Apply Now</Button>
+        </Container>
+        {/* mobile */}
+        <Container className="h-full items-center justify-between lg:hidden">
+          <NFLogo />
+          <DropdownMenu menuItems={MENU_ITEMS} />
+        </Container>
+      </div>
+    </header>
+  ),
 );
+
+Header.displayName = "Header";
