@@ -1,14 +1,18 @@
+import { Fragment } from "react/jsx-runtime";
+
 import { BackgroundImage, type BackgroundImageProps } from "./BackgroundImage";
 import { Button } from "./Button";
 import { Container } from "./Container";
 
 export type HeroProps = Omit<BackgroundImageProps, "children"> & {
+  subTitle?: string;
   title?: string;
 };
 
 export const Hero = ({
   imageHandleDesktop,
   imageHandleMobile,
+  subTitle,
   title,
   ...rest
 }: HeroProps) => (
@@ -27,8 +31,12 @@ export const Hero = ({
           )}
           <div className="grid gap-y-4">
             <p className="text-3xl text-onImage">
-              Get Started <span className="text-nowrap">&gt; Get Approved</span>{" "}
-              <span className="text-nowrap">&gt; Get Funding</span>
+              {subTitle?.split(">").map((part, index) => (
+                <Fragment key={index}>
+                  <span>{part.trim()}</span>
+                  {index < (subTitle?.split(">").length ?? 0) - 1 && " > "}
+                </Fragment>
+              ))}
             </p>
             <Button size="lg">Apply Now</Button>
           </div>
