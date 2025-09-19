@@ -1,10 +1,5 @@
 import { HomePage } from "../lib/pages/Home.page";
-import PageTemplate from "../lib/templates/PageTemplate";
 
-const Home = () => (
-  <PageTemplate>
-    <HomePage />
-  </PageTemplate>
-);
+const Home = () => <HomePage />;
 
 export default Home;

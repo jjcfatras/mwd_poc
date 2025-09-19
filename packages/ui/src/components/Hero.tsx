@@ -5,8 +5,8 @@ import { Button } from "./Button";
 import { Container } from "./Container";
 
 export type HeroProps = Omit<BackgroundImageProps, "children"> & {
-  subTitle?: string;
-  title?: string;
+  subTitle?: string | undefined;
+  title?: string | undefined;
 };
 
 export const Hero = ({

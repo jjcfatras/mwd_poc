@@ -247,7 +247,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(
           <Button className="ml-1">Apply Now</Button>
         </Container>
         {/* mobile */}
-        <Container className="h-full items-center justify-between lg:hidden">
+        <Container className="h-full items-center justify-between md:px-0 lg:hidden">
           <NFLogo />
           <DropdownMenu menuItems={MENU_ITEMS} />
         </Container>
