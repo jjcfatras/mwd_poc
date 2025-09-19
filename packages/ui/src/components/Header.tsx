@@ -212,7 +212,7 @@ const NFLogo = () => (
   />
 );
 
-type HeaderProps = HTMLAttributes<HTMLElement>;
+export type HeaderProps = HTMLAttributes<HTMLElement>;
 
 export const Header = forwardRef<HTMLElement, HeaderProps>(
   ({ className, ...rest }: HeaderProps, ref) => (
