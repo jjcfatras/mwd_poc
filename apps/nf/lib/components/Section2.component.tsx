@@ -1,5 +1,6 @@
 import { BorderedIcon } from "@repo/ui/components/BorderedIcon";
 import { Button } from "@repo/ui/components/Button";
+import { HTMLDiv } from "@repo/ui/components/HTML";
 import { HygraphImage } from "@repo/ui/components/HygraphImage";
 
 export type Section2ComponentProps = {
@@ -13,13 +14,7 @@ export const Section2Component = async ({
 }: Section2ComponentProps) => (
   <>
     <h2 className="text-4xl font-medium text-onSurfaceDark">{heading}</h2>
-    <div
-      className="text-xl font-normal text-onSurfaceDark"
-      dangerouslySetInnerHTML={{
-        __html: summary,
-      }}
-    />
-
+    <HTMLDiv className="text-xl font-normal text-onSurfaceDark" html={summary} />
     <div className="grid items-center justify-items-center gap-4 md:grid-cols-3">
       <div className="grid items-center justify-items-center gap-5 p-4 text-center">
         <BorderedIcon>

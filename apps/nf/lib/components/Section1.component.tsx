@@ -1,4 +1,5 @@
 import { Button } from "@repo/ui/components/Button";
+import { HTMLDiv } from "@repo/ui/components/HTML";
 import { HygraphImage } from "@repo/ui/components/HygraphImage";
 
 export type Section1ComponentProps = {
@@ -31,11 +32,9 @@ export const Section1Component = ({
 }: Section1ComponentProps) => (
   <>
     <h2 className="text-4xl font-medium text-onSecondary">{heading}</h2>
-    <div
+    <HTMLDiv
       className="text-xl text-onSecondary [&_a]:cursor-pointer [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary-interact [&_a]:hover:no-underline"
-      dangerouslySetInnerHTML={{
-        __html: summary,
-      }}
+      html={summary}
     />
 
     <div className="grid justify-items-center gap-4 md:grid-cols-2">
@@ -53,12 +52,7 @@ export const Section1Component = ({
           <h2 className="text-4xl font-medium text-onSurface">
             {card.heading}
           </h2>
-          <div
-            className="text-xl text-onSurface"
-            dangerouslySetInnerHTML={{
-              __html: card.body.html,
-            }}
-          />
+          <HTMLDiv className="text-xl text-onSurface" html={card.body.html} />
           <h3 className="text-lg font-semibold text-onSurface">
             {card.subHeading}
           </h3>
