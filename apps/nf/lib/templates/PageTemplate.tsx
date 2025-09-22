@@ -7,7 +7,7 @@ import { useHeaderHeight } from "@repo/ui/utils";
 
 export type PageTemplateProps = PropsWithChildren;
 
-const PageTemplate = ({ children }: PageTemplateProps) => {
+export const PageTemplate = ({ children }: PageTemplateProps) => {
   const { headerHeight, headerRef, isHydrated } = useHeaderHeight();
 
   return (
@@ -22,5 +22,3 @@ const PageTemplate = ({ children }: PageTemplateProps) => {
     </div>
   );
 };
-
-export default PageTemplate;

@@ -55,6 +55,28 @@ const getContent = async (slug: string) => {
       summary {
         html
       }
+      columns {
+        ... on Column {
+          id
+          heading
+          image {
+            handle
+            url
+            height
+            width
+          }
+          body {
+            html
+          }
+        }
+      }
+      button {
+        ... on Button {
+          id
+          link
+          text
+        }
+      }
     }
   }
 }`,
@@ -76,7 +98,9 @@ const getContent = async (slug: string) => {
 export const HomeProvider = async () => {
   const content = await getContent("/");
 
+  console.group("HomeProvider");
   console.log(JSON.stringify(content, null, "\t"));
+  console.groupEnd();
 
   return (
     <HomeComponent
@@ -92,6 +116,8 @@ export const HomeProvider = async () => {
         summary: content.poc.section1.summary.html,
       }}
       section2Props={{
+        button: content.poc.section2.button,
+        columns: content.poc.section2.columns,
         heading: content.poc.section2.heading,
         summary: content.poc.section2.summary.html,
       }}
