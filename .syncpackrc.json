@@ -1,0 +1,28 @@
+{
+  "source": ["package.json", "apps/*/package.json", "packages/*/package.json"],
+  "versionGroups": [
+    {
+      "label": "Use workspace:* for @repo packages",
+      "dependencies": ["@repo/**"],
+      "isIgnored": true
+    },
+    {
+      "label": "Keep React versions in sync",
+      "dependencies": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
+      ],
+      "packages": ["**"]
+    }
+  ],
+  "semverGroups": [
+    {
+      "label": "Use caret ranges for external packages",
+      "dependencies": ["**"],
+      "packages": ["**"],
+      "range": "^"
+    }
+  ]
+}

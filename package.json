@@ -1,32 +1,32 @@
 {
   "name": "mwd_poc",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build --concurrency=100%",
-    "dev": "turbo run dev --concurrency=100%",
-    "lint": "turbo run lint",
-    "format": "prettier . --write",
-    "check-types": "turbo run check-types"
+  "dependencies": {
+    "jsdom": "^27.0.0",
+    "syncpack": "^13.0.4"
   },
   "devDependencies": {
-    "@repo/formatting": "workspace:*",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "turbo": "^2.5.6",
-    "typescript": "5.9.2"
+    "typescript": "^5.9.2"
   },
-  "packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a",
+  "engineStrict": true,
   "engines": {
     "node": "24.x"
   },
-  "engineStrict": true,
+  "packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a",
   "pnpm": {
     "overrides": {
-      "@types/react": "19.1.11",
-      "@types/react-dom": "19.1.8"
+      "@types/react": "^19.1.11",
+      "@types/react-dom": "^19.1.8"
     }
   },
-  "dependencies": {
-    "jsdom": "^27.0.0"
+  "private": true,
+  "scripts": {
+    "build": "turbo run build --concurrency=100%",
+    "check-types": "turbo run check-types",
+    "dev": "turbo run dev --concurrency=100%",
+    "format": "prettier . --write",
+    "lint": "turbo run lint"
   }
 }

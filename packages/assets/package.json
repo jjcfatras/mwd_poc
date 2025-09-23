@@ -1,11 +1,11 @@
 {
   "name": "@repo/assets",
   "version": "0.0.0",
-  "type": "module",
-  "private": true,
+  "dependencies": {},
   "exports": {
     "./images/*": "./src/images/*",
     "./fonts/*": "./src/fonts/*"
   },
-  "dependencies": {}
+  "private": true,
+  "type": "module"
 }
