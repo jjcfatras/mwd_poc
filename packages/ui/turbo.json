@@ -2,16 +2,16 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "dependsOn": ["build:styles"]
+      "dependsOn": ["build:styles:nf"]
     },
-    "build:styles": {
+    "build:styles:nf": {
       "outputs": ["dist/**"]
     },
 
     "dev": {
-      "with": ["dev:styles", "dev:components"]
+      "with": ["dev:styles:nf", "dev:components"]
     },
-    "dev:styles": {
+    "dev:styles:nf": {
       "cache": false,
       "persistent": true
     },

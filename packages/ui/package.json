@@ -33,14 +33,14 @@
     "./components/*": "./src/components/*.tsx",
     "./theming/*": "./src/theming/*.ts",
     "./utils": "./src/utils/index.ts",
-    "./styles": "./dist/styles.css"
+    "./styles-nf": "./dist/styles.nf.css"
   },
   "private": true,
   "scripts": {
-    "build:styles": "tailwindcss -i ./globals.css -o ./dist/styles.css",
+    "build:styles:nf": "tailwindcss -i ./globals.nf.css -o ./dist/styles.nf.css",
     "check-types": "tsc --noEmit",
     "dev:components": "tsc --watch",
-    "dev:styles": "tailwindcss -i ./globals.css -o ./dist/styles.css --watch",
+    "dev:styles:nf": "tailwindcss -i ./globals.nf.css -o ./dist/styles.nf.css --watch",
     "generate:component": "turbo gen react-component",
     "lint": "eslint --fix"
   },

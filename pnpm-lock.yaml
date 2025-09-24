@@ -19,6 +19,9 @@ importers:
         specifier: ^13.0.4
         version: 13.0.4(typescript@5.9.2)
     devDependencies:
+      '@repo/formatting':
+        specifier: workspace:*
+        version: link:packages/formatting
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -47,16 +50,16 @@ importers:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.6)
       next:
-        specifier: 15.5.2
+        specifier: ^15.5.2
         version: 15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
       react:
-        specifier: 19.1.1
+        specifier: ^19.1.1
         version: 19.1.1
       react-dom:
-        specifier: 19.1.1
+        specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
       tailwindcss:
         specifier: ^4.1.12
@@ -90,7 +93,7 @@ importers:
         specifier: ^9.34.0
         version: 9.34.0(jiti@2.5.1)
       eslint-config-next:
-        specifier: 15.5.2
+        specifier: ^15.5.2
         version: 15.5.2(eslint@9.34.0(jiti@2.5.1))(typescript@5.9.2)
       typescript:
         specifier: ^5.9.2
@@ -173,7 +176,7 @@ importers:
         specifier: ^9.34.0
         version: 9.34.0(jiti@2.5.1)
       typescript:
-        specifier: 5.9.2
+        specifier: ^5.9.2
         version: 5.9.2
 
   packages/typescript-config: {}
@@ -251,7 +254,7 @@ importers:
         specifier: ^9.34.0
         version: 9.34.0(jiti@2.5.1)
       typescript:
-        specifier: 5.9.2
+        specifier: ^5.9.2
         version: 5.9.2
 
 packages:
