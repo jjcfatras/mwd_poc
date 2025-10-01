@@ -1,6 +1,6 @@
 import { BorderedIcon } from "@repo/ui/components/BorderedIcon";
 import { Button } from "@repo/ui/components/Button";
-import { HTMLDiv } from "@repo/ui/components/HTML";
+import { HTMLDiv } from "@repo/ui/components/HTMLDiv";
 import { HygraphImage } from "@repo/ui/components/HygraphImage";
 
 export type Section2ComponentProps = {
