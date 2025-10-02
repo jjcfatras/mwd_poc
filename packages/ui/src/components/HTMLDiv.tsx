@@ -3,7 +3,7 @@ import type { HTMLAttributes } from "react";
 
 export type HTMLDivProps = Omit<
   HTMLAttributes<HTMLDivElement>,
-  "dangerouslySetInnerHTML"
+  "children" | "dangerouslySetInnerHTML"
 > & { html: string };
 
 export const HTMLDiv = ({ html, ...rest }: HTMLDivProps) => (
