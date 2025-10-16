@@ -8,7 +8,9 @@ export type HTMLDivProps = Omit<
 
 export const HTMLDiv = ({ html, ...rest }: HTMLDivProps) => (
   <div
-    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+    dangerouslySetInnerHTML={{
+      __html: DOMPurify.sanitize(html, { USE_PROFILES: { html: true } }),
+    }}
     {...rest}
   />
 );
