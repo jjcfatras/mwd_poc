@@ -74,6 +74,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@repo/formatting':
+        specifier: workspace:*
+        version: link:../../packages/formatting
       '@repo/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config

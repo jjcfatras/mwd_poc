@@ -15,6 +15,9 @@ import {
   Section2Component,
   type Section2ComponentProps,
 } from "../components/Section2.component";
+import { HeroProvider } from "../providers/Hero.provider";
+import { Section1Provider } from "../providers/Section1.provider";
+import { Section2Provider } from "../providers/Section2.provider";
 
 export type HomeComponentProps = {
   heroProps: HeroProps;
@@ -28,7 +31,8 @@ export const HomeComponent = ({
   section2Props,
 }: HomeComponentProps) => (
   <>
-    <Hero {...heroProps} />
+    {/* render everything at once */}
+    {/* <Hero {...heroProps} />
     <div className="w-full bg-surfaceDarker">
       <Container>
         <div className="grid w-full justify-items-center gap-0 sm:grid-cols-2 lg:grid-cols-4">
@@ -48,6 +52,30 @@ export const HomeComponent = ({
     <div className="w-full bg-surfaceDark py-16">
       <Container className="flex-col items-center justify-items-center gap-8 text-center">
         <Section2Component {...section2Props} />
+      </Container>
+    </div> */}
+
+    {/* render dynamically */}
+    <HeroProvider route="/" />
+    <div className="w-full bg-surfaceDarker">
+      <Container>
+        <div className="grid w-full justify-items-center gap-0 sm:grid-cols-2 lg:grid-cols-4">
+          {Array.from([trustpilotIcon, bbbIcon, inc5000Icon, adobeIcon]).map(
+            (icon, index) => (
+              <Image alt="" key={index} src={icon} />
+            ),
+          )}
+        </div>
+      </Container>
+    </div>
+    <div className="w-full bg-secondary py-16">
+      <Container className="flex-col justify-center gap-8 text-center">
+        <Section1Provider route="/" />
+      </Container>
+    </div>
+    <div className="w-full bg-surfaceDark py-16">
+      <Container className="flex-col items-center justify-items-center gap-8 text-center">
+        <Section2Provider route="/" />
       </Container>
     </div>
   </>

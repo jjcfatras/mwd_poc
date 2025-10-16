@@ -25,12 +25,12 @@ export const Hero = ({
       <div className="grid grid-cols-2">
         <div className="grid place-content-around">
           {title && (
-            <h1 className="text-5xl font-medium text-onImage lg:text-6xl">
+            <h1 className="text-onImage text-5xl font-medium lg:text-6xl">
               {title}
             </h1>
           )}
           <div className="grid gap-y-4">
-            <p className="text-3xl text-onImage">
+            <p className="text-onImage text-3xl">
               {subTitle?.split(">").map((part, index) => (
                 <Fragment key={index}>
                   <span>{part.trim()}</span>

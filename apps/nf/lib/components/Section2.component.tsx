@@ -26,7 +26,7 @@ export type Section2ComponentProps = {
   summary: string;
 };
 
-export const Section2Component = async ({
+export const Section2Component = ({
   button,
   columns,
   heading,
