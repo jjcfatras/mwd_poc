@@ -57,7 +57,7 @@ export const HomeComponent = ({
 
     {/* render dynamically */}
     <HeroProvider route="/" />
-    <div className="w-full bg-surfaceDarker">
+    <div className="bg-surfaceDarker w-full">
       <Container>
         <div className="grid w-full justify-items-center gap-0 sm:grid-cols-2 lg:grid-cols-4">
           {Array.from([trustpilotIcon, bbbIcon, inc5000Icon, adobeIcon]).map(
@@ -68,12 +68,12 @@ export const HomeComponent = ({
         </div>
       </Container>
     </div>
-    <div className="w-full bg-secondary py-16">
+    <div className="bg-secondary w-full py-16">
       <Container className="flex-col justify-center gap-8 text-center">
         <Section1Provider route="/" />
       </Container>
     </div>
-    <div className="w-full bg-surfaceDark py-16">
+    <div className="bg-surfaceDark w-full py-16">
       <Container className="flex-col items-center justify-items-center gap-8 text-center">
         <Section2Provider route="/" />
       </Container>

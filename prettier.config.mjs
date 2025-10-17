@@ -1,3 +1,6 @@
-import { config } from "@repo/formatting/prettier-config";
+import { config } from "@repo/formatting/prettier-tw";
 
-export default config;
+export default {
+  ...config,
+  tailwindStylesheet: "@repo/formatting/nf-styles",
+};

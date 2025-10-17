@@ -12,7 +12,7 @@ export const PageTemplate = ({ children }: PageTemplateProps) => {
 
   return (
     <div className="m-0 flex size-full flex-col p-0">
-      <Header className="fixed top-0 right-0 left-0 z-50" ref={headerRef} />
+      <Header className="fixed left-0 right-0 top-0 z-50" ref={headerRef} />
       <main
         className={isHydrated ? "transition-[margin-top] duration-200" : ""}
         style={{ marginTop: `${headerHeight}px` }}

@@ -12,11 +12,11 @@ const button = cva(
     },
     variants: {
       size: {
-        lg: "h-16 w-max min-w-69 px-6 py-3 text-xl",
+        lg: "min-w-69 h-16 w-max px-6 py-3 text-xl",
         "lg-full": "h-16 w-full px-6 py-3 text-xl",
-        md: "text-md h-12 w-max min-w-30 px-4 py-2",
+        md: "text-md min-w-30 h-12 w-max px-4 py-2",
         "md-full": "text-md h-12 w-full px-4 py-2",
-        sm: "h-10 w-max min-w-25 px-2 py-1 text-xs",
+        sm: "min-w-25 h-10 w-max px-2 py-1 text-xs",
         "sm-full": "h-10 w-full px-2 py-1 text-xs",
       },
       variant: {

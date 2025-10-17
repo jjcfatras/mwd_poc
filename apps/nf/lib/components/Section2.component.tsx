@@ -33,9 +33,9 @@ export const Section2Component = ({
   summary,
 }: Section2ComponentProps) => (
   <>
-    <h2 className="text-4xl font-medium text-onSurfaceDark">{heading}</h2>
+    <h2 className="text-onSurfaceDark text-4xl font-medium">{heading}</h2>
     <HTMLDiv
-      className="text-xl font-normal text-onSurfaceDark"
+      className="text-onSurfaceDark text-xl font-normal"
       html={summary}
     />
     <div className="grid items-center justify-items-center gap-4 md:grid-cols-3">
@@ -47,17 +47,17 @@ export const Section2Component = ({
           <BorderedIcon>
             <HygraphImage
               alt=""
-              className="contrast brightness-120 hue-rotate-77 invert sepia-2"
+              className="contrast brightness-120 hue-rotate-77 sepia-2 invert"
               height={65}
               imageHandle={column.image.handle}
               width={65}
             />
           </BorderedIcon>
-          <h3 className="text-xl font-bold text-onSurfaceDark">
+          <h3 className="text-onSurfaceDark text-xl font-bold">
             {column.heading}
           </h3>
           <HTMLDiv
-            className="text-xl text-onSurfaceDark"
+            className="text-onSurfaceDark text-xl"
             html={column.body.html}
           />
         </div>

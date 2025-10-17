@@ -22,6 +22,9 @@ importers:
       '@repo/formatting':
         specifier: workspace:*
         version: link:packages/formatting
+      '@repo/tailwind-config':
+        specifier: workspace:*
+        version: link:packages/tailwind-config
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -74,9 +77,6 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@repo/formatting':
-        specifier: workspace:*
-        version: link:../../packages/formatting
       '@repo/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config

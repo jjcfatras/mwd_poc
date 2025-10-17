@@ -31,16 +31,16 @@ export const Section1Component = ({
   summary,
 }: Section1ComponentProps) => (
   <>
-    <h2 className="text-4xl font-medium text-onSecondary">{heading}</h2>
+    <h2 className="text-onSecondary text-4xl font-medium">{heading}</h2>
     <HTMLDiv
-      className="text-xl text-onSecondary [&_a]:cursor-pointer [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary-interact [&_a]:hover:no-underline"
+      className="text-onSecondary [&_a]:text-primary [&_a]:hover:text-primary-interact text-xl [&_a]:cursor-pointer [&_a]:underline [&_a]:hover:no-underline"
       html={summary}
     />
 
     <div className="grid justify-items-center gap-4 md:grid-cols-2">
       {cards.map((card) => (
         <div
-          className="grid w-4/5 justify-items-center gap-4 bg-surface p-9"
+          className="bg-surface grid w-4/5 justify-items-center gap-4 p-9"
           key={card.id}
         >
           <HygraphImage
@@ -49,11 +49,11 @@ export const Section1Component = ({
             imageHandle={card.image.handle}
             width={card.image.width}
           />
-          <h2 className="text-4xl font-medium text-onSurface">
+          <h2 className="text-onSurface text-4xl font-medium">
             {card.heading}
           </h2>
-          <HTMLDiv className="text-xl text-onSurface" html={card.body.html} />
-          <h3 className="text-lg font-semibold text-onSurface">
+          <HTMLDiv className="text-onSurface text-xl" html={card.body.html} />
+          <h3 className="text-onSurface text-lg font-semibold">
             {card.subHeading}
           </h3>
           <a className="size-max w-full" href={card.button.link}>

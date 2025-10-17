@@ -55,24 +55,24 @@ const getContent = async (slug: string) => {
 
 export const Section1Skeleton = () => (
   <>
-    <div className="mx-auto h-10 w-full rounded bg-outline/60 md:mx-0" />
+    <div className="bg-outline/60 mx-auto h-10 w-full rounded md:mx-0" />
     <div className="mx-auto grid w-full gap-3">
-      <span className="h-6 w-full rounded bg-outline/40" />
-      <span className="h-6 w-full rounded bg-outline/30" />
-      <span className="h-6 w-4/6 rounded bg-outline/20" />
+      <span className="bg-outline/40 h-6 w-full rounded" />
+      <span className="bg-outline/30 h-6 w-full rounded" />
+      <span className="bg-outline/20 h-6 w-4/6 rounded" />
     </div>
 
     <div className="grid justify-items-center gap-4 md:grid-cols-2">
       {Array.from({ length: 2 }).map((_, index) => (
         <div
-          className="grid w-4/5 animate-pulse justify-items-center gap-4 bg-surface p-9"
+          className="bg-surface grid w-4/5 animate-pulse justify-items-center gap-4 p-9"
           key={index}
         >
-          <span className="h-24 w-24 rounded bg-outline/30" />
-          <span className="h-10 w-3/4 rounded bg-outline/40" />
-          <span className="h-20 w-full rounded bg-outline/20" />
-          <span className="h-6 w-1/2 rounded bg-outline/30" />
-          <span className="h-12 w-full rounded bg-primary/40" />
+          <span className="bg-outline/30 h-24 w-24 rounded" />
+          <span className="bg-outline/40 h-10 w-3/4 rounded" />
+          <span className="bg-outline/20 h-20 w-full rounded" />
+          <span className="bg-outline/30 h-6 w-1/2 rounded" />
+          <span className="bg-primary/40 h-12 w-full rounded" />
         </div>
       ))}
     </div>

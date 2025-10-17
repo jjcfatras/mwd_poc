@@ -107,22 +107,22 @@ const HeaderMenu = ({ className, menuItems, ...rest }: HeaderMenuProps) => (
   >
     {menuItems.map((item) => (
       <div
-        className="group relative grid grid-cols-1 p-4 hover:bg-surfaceDark"
+        className="hover:bg-surfaceDark group relative grid grid-cols-1 p-4"
         key={item.label}
       >
         <div className="grid grid-cols-1 place-items-center">
           <a
-            className="text-lg font-semibold text-onSurfaceDark"
+            className="text-onSurfaceDark text-lg font-semibold"
             href={item.path}
           >
             {item.label}
           </a>
         </div>
         {!!item.subItems?.length && (
-          <div className="absolute top-full right-0 left-0 hidden w-max min-w-full divide-y rounded-t-none rounded-b-sm border-0 border-t-4 border-t-primary bg-surface text-left shadow-md group-hover:block">
+          <div className="border-t-primary bg-surface absolute left-0 right-0 top-full hidden w-max min-w-full divide-y rounded-b-sm rounded-t-none border-0 border-t-4 text-left shadow-md group-hover:block">
             {item.subItems.map((subItem) => (
               <a
-                className="block border-outline px-4 py-3 text-base/4 text-onSurface hover:underline"
+                className="border-outline text-onSurface block px-4 py-3 text-base/4 hover:underline"
                 href={subItem.path}
                 key={subItem.label}
               >
@@ -138,9 +138,9 @@ const HeaderMenu = ({ className, menuItems, ...rest }: HeaderMenuProps) => (
 
 const Hamburger = () => (
   <div className="grid h-[40px] w-[40px] cursor-pointer grid-cols-1 place-items-center">
-    <span className="h-1 w-full bg-primary" />
-    <span className="h-1 w-full bg-primary" />
-    <span className="h-1 w-full bg-primary" />
+    <span className="bg-primary h-1 w-full" />
+    <span className="bg-primary h-1 w-full" />
+    <span className="bg-primary h-1 w-full" />
   </div>
 );
 
@@ -153,21 +153,21 @@ const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
     <Collapsible.Trigger className="grid place-content-center">
       <Hamburger />
     </Collapsible.Trigger>
-    <Collapsible.Content className="absolute top-full right-0 left-0 z-100 border-b-4 border-primary bg-surface">
+    <Collapsible.Content className="z-100 border-primary bg-surface absolute left-0 right-0 top-full border-b-4">
       <div className="flex grow flex-col place-items-center p-0">
         <Accordion.Root
-          className="flex w-full flex-col divide-y border-b-1 border-outline"
+          className="border-b-1 border-outline flex w-full flex-col divide-y"
           collapsible
         >
           {menuItems.map((item) => (
             <Accordion.Item
-              className="w-full border-outline"
+              className="border-outline w-full"
               key={item.label}
               value={item.label}
             >
-              <Accordion.ItemTrigger className="flex w-full flex-row justify-between bg-surface p-4 text-left align-middle hover:bg-surfaceDark">
+              <Accordion.ItemTrigger className="bg-surface hover:bg-surfaceDark flex w-full flex-row justify-between p-4 text-left align-middle">
                 <a
-                  className="text-lg font-semibold text-onSurface hover:bg-onSurfaceDark"
+                  className="text-onSurface hover:bg-onSurfaceDark text-lg font-semibold"
                   href={item.path}
                 >
                   {item.label}
@@ -182,7 +182,7 @@ const DropdownMenu = ({ menuItems, ...rest }: DropdownMenuProps) => (
                 <div className="flex flex-col">
                   {item.subItems?.map((subItem) => (
                     <a
-                      className="block px-4 py-2 text-base/4 text-onSurface hover:underline"
+                      className="text-onSurface block px-4 py-2 text-base/4 hover:underline"
                       href={subItem.path}
                       key={subItem.label}
                     >
@@ -221,17 +221,17 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(
       ref={ref}
       {...rest}
     >
-      <div className="flex w-full flex-row items-center bg-secondary">
+      <div className="bg-secondary flex w-full flex-row items-center">
         <Container>
           <div className="ml-auto grid auto-cols-auto grid-flow-col divide-x">
             <a
-              className="border-outline px-4 py-2 text-primary"
+              className="border-outline text-primary px-4 py-2"
               href="tel:8887332383"
             >
               888.733.2383
             </a>
             <a
-              className="border-outline px-4 py-2 text-base text-onSecondary"
+              className="border-outline text-onSecondary px-4 py-2 text-base"
               href="/contact-us"
             >
               Contact Us
@@ -239,7 +239,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(
           </div>
         </Container>
       </div>
-      <div className="relative flex w-full items-center border-b-4 border-primary bg-surface">
+      <div className="border-primary bg-surface relative flex w-full items-center border-b-4">
         {/* desktop */}
         <Container className="hidden h-full items-center lg:flex">
           <NFLogo />
